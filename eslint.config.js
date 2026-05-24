@@ -14,6 +14,7 @@ export default defineConfig([
       reactRefresh.configs.vite,
     ],
     languageOptions: {
+      "not-used-vars" : true,
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
