@@ -5,10 +5,13 @@ import Home from './pages/Home'
 import Auth from './pages/Auth'
 import Checkout from './pages/Checkout'
 import Nav from './components/Nav'
+import AuthProvider from './context/AuthContext'
 
 function App() {
  
   return (
+    <AuthProvider>
+
     <div className='app'>
       <Nav />
      <Routes>
@@ -19,6 +22,7 @@ function App() {
 
      </Routes>
     </div>
+    </AuthProvider>
   )
 }
 
