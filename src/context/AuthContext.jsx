@@ -27,5 +27,14 @@ export default function AuthProvider({children}) {
           setUser({email}) ;
           return {success: true};
     }
-   return <AuthContext.Provider value={{signUp , login , user}}>{children}</AuthContext.Provider>
+    function logout(){
+      localStorage.removeItem("users");
+      localStorage.removeItem("currentUserEmail");
+    }
+   return <AuthContext.Provider value={{signUp , login , user, logout}}>{children}</AuthContext.Provider>
+}
+
+export function useAuth() {
+  const context = useContext(AuthContext);
+  return context;
 }
